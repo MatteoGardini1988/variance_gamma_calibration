@@ -346,7 +346,7 @@ Observe that the likelihood is not a probability density function.
 	\begin{equation*}
 		f(x|\Theta) = \frac{1}{\sqrt{2 \pi \sigma^2}}e^{-\frac{(x-\mu)^{2}}{2\sigma}}
 	\end{equation*}
-we can say that the likelihood is $f(x|\Theta)$ regarded as a function of $x$. If $\left\{x_{i}\right\}_{i\in \mathbb{N}}$ are i.i.d., then the likelihood of the random vector $\boldsymbol{x}$ is given by:
+we can say that the likelihood is $f(x|\Theta)$ regarded as a function of $\Theta$. If $\left\{x_{i}\right\}_{i\in \mathbb{N}}$ are i.i.d., then the likelihood of the random vector $\boldsymbol{x}$ is given by:
 
 	\begin{equation*}
 	\mathcal{L}\left(\Theta\right) \coloneqq f(\boldsymbol{x}|\Theta) = \prod_{i=1}^{n} \frac{1}{\sqrt{2 \pi \sigma^2}}e^{-\frac{(x_{i}-\mu)^{2}}{2\sigma}}.
@@ -376,7 +376,7 @@ we can say that the likelihood is $f(x|\Theta)$ regarded as a function of $x$. I
 \begin{frame}
 \frametitle{Historical Calibration - Maximum Likelihood Estimation}
 \begin{mybox}{darkgreen}{\textbf{Maximum Likelihood Estimation (formally)}}
-Let $\mathcal{M}\left(\Theta\right)$ be a Model and let $\Theta$ be its set of parameters. Let $\mathcal{L}\left(\Theta\right)$ be the likelihood of observing  a particular data sample. The $MLE$ estimate $\hat{\Theta}$ is such that:
+Let $\mathcal{M}\left(\Theta\right)$ be a model and let $\Theta$ be its set of parameters. Let $\mathcal{L}\left(\Theta\right)$ be the likelihood of observing  a particular data sample. The $MLE$ estimate $\hat{\Theta}$ is such that:
 \begin{equation*}
 \hat{\Theta} = \argmax_{\Theta}\mathcal{L}\left(\Theta\right)
 \end{equation*}
@@ -462,7 +462,7 @@ Assume to have a given data sample $x = \left(x_{1},x_{2},\dots,x_{n}\right)$\fo
 %----------------------
 \begin{frame}
 	\frametitle{Historical Calibration - Maximum Likelihood for Lévy processes}
-	The set of parameters $\hat{\Theta}$ that maximize the likelihood is obtained by solving:
+	The set of parameters $\hat{\Theta}$ which maximizes the likelihood is obtained by solving:
 	\begin{equation*}
 	\hat{\Theta} = \max_{\Theta}\mathcal{L}^{*}\left(\Theta\right).
 	\end{equation*}
@@ -709,9 +709,9 @@ For the variance Gamma model a semi-analytic closed formula for Call options is 
 	C^{\Theta}\left(K,T\right) = \int_{0}^{\infty}C(g)\frac{\frac{1}{\nu}^{\frac{t}{\nu}}}{\Gamma\left(\frac{t}{\nu}\right)}g^{\frac{t}{\nu}-1}e^{\frac{-g}{\nu}}
 	\label{eqn:VGclosedformula}
 \end{equation}
-where $C\left(g\right)$ is the price of a Call within the Black-Scholes model. Integral in Equation \eqref{eqn:VGclosedformula} seems to be scaring but, actually, can be computed in a very efficient way using Bessel functions and Hypergeometric degenerated function as was shown in \citet{MadanSeneta90}. \\
+where $C\left(g\right)$ is the price of a Call within the Black-Scholes model. Integral in Equation \eqref{eqn:VGclosedformula} seems to be scaring but, actually, can be computed in a very efficient way using Bessel functions and Hypergeometric degenerated function as was shown by \citet{MadanSeneta90}. \\
 \vspace{0.2cm}
-\textcolor{darkred}{\textbf{Obs:}} In the following numerical experiment we do not use the explicit formula but the FFT method to compute the call option price $C^{\Theta}\left(K,T\right)$. This because FFT method can be applied to other Lévy models and because I want to give you the code of a widely used method!
+\textcolor{darkred}{\textbf{Obs:}} In the following numerical experiment we do not use the explicit formula but the FFT method to compute the call option price $C^{\Theta}\left(K,T\right)$. This because FFT method can be applied to other Lévy models and hence it is a widely used method!
 
 \end{frame}
 
